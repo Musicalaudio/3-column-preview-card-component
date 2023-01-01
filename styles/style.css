@@ -1,0 +1,121 @@
+:root{
+  --primary-orange: hsl(31, 77%, 52%);
+  --primary-dark-cyan: hsl(184, 100%, 22%);
+  --primary-darker-cyan: hsl(179, 100%, 13%);
+
+  --neutral-white: hsl(0, 0%, 100%, 0.75);
+  --neutral-gray: hsl(0, 0%, 95%);
+
+  --ff-base: 'Lexend Deca', sans-serif;
+  --ff-accent: 'Big Shoulders Display', cursive;
+
+  --fs-h2: 2.2rem;
+  --fs-base: 0.9375rem;
+  
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+body{
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+main{
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  color: var(--neutral-gray);
+}
+
+
+/* main component */
+.car-container{
+  margin: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.car-container section{
+  padding: 2.75rem 3.25rem;
+  display: grid;
+  gap: 1.5rem; 
+  line-height: 1.5;
+}
+
+.car-container__sedan{
+  background-color: var(--primary-orange);
+}
+
+.car-container__suv{
+  background-color: var(--primary-dark-cyan);
+}
+
+.car-container__luxury{
+  background-color: var(--primary-darker-cyan);
+}
+
+.car-container__title{
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  font-size: var(--fs-h2);
+}
+
+.car-container__description{
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-base);
+  opacity: .75;
+}
+
+.car-container__btn{
+  border: none;
+  max-width: fit-content;
+  border: 0.125rem solid var(--neutral-gray);
+  background-color: var(--neutral-gray);
+  font-family: var(--ff-base);
+  padding: .73rem 2.2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.car-container__btn:hover{
+  background-color: transparent;
+  color: var(--neutral-gray)
+}
+
+.btn-sedan{
+  color: var(--primary-orange);
+}
+
+.btn-suv{
+  color: var(--primary-dark-cyan);
+}
+
+.btn-luxury{
+  color: var(--primary-darker-cyan);
+}
+
+
+@media (min-width: 1000px){
+  .car-container{
+    display: grid;
+    grid-template: none / repeat(3, 1fr);
+    margin: 0rem 10rem;
+  }
+
+  .car-container section{
+    padding: 2.75rem 3.25rem;
+    gap: 1.3rem;
+  }
+
+  .car-container__description{
+    margin-bottom: 3rem;
+  }
+}
+
+/* attribution */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
